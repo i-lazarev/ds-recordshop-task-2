@@ -4,6 +4,7 @@ const path = require('path');
 const logger = require('morgan');
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
+const cors = require("./middleware/cors");
 
 /** ROUTERS */
 const indexRouter = require('./routes/index');
@@ -13,6 +14,7 @@ const recordsRouter = require('./routes/records');
 /** INIT */
 const app = express();
 
+app.use(cors);
 /** LOGGING */
 /* THIS LINE LOGS ALL REQUESTS MADE TO OUR API TO THE CONSOLE */
 app.use(logger('dev'));
@@ -29,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 /** STATIC FILES*/
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 
 /** ROUTES */

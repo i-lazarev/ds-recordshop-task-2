@@ -1,3 +1,9 @@
 {
-  "records": []
+  "records": [
+    {
+      "name": "Rob",
+      "age": 36,
+      "id": "92107510-111c-11ea-8bc5-955ec818a0a3"
+    }
+  ]
 }
